@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhinchak Chat App</title>
+
+    <!-- tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- google fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto px-4 lg:px-0">
+
+        <div class="main-container flex flex-col lg:flex-row lg:space-x-4 p-4 lg:p-20 m-4 lg:m-20">
+
+            <!-- left-side -->
+            <div class="left-side w-full lg:w-1/2">
+                <div class="first-box">
+                    <div class="inner-container">
+                        <h1 class="text-xl lg:text-2xl font-extrabold leading-10 mt-5 mb-5 text-indigo-800">
+                            :- Hariom Pravin Shivhare
+                        </h1>
+                        <p class="text-lg lg:text-xl leading-7 lg:leading-9 text-gray-700 mb-8">This is a chatbot
+                            application created using DialogFlow(For Developing Chatbots) + Google Console(Cloud
+                            Platform) + kommunicate(AI powered Customer Service)</p>
+                    </div>
+                </div>
+                <div class="second-box">
+                    <h1 class="text-xl lg:text-2xl font-extrabold leading-10 text-indigo-800 mt-5 mb-5">
+                        :- Django + DialogFlow + Google Console + Kommunicate 💬
+                    </h1>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <p class="text-lg lg:text-xl leading-7 lg:leading-9 text-gray-700">&#9997; Customize your chat
+                            widget to match your brand's needs</p>
+                        <p class="text-lg lg:text-xl leading-7 lg:leading-9 text-gray-700">&#129302; Utilize bots to
+                            handle routine customer inquiries efficiently</p>
+                        <p class="text-lg lg:text-xl leading-7 lg:leading-9 text-gray-700">&#128075; Enable seamless
+                            bot-to-human transitions for optimal user experience</p>
+                        <p class="text-lg lg:text-xl leading-7 lg:leading-9 text-gray-700">&#x2B50; Harness rich
+                            messaging features to enhance bot capabilities</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right-side -->
+            <div class="right-side mx-auto w-full lg:w-1/2">
+                <div class="image w-[50%] mx-auto opacity-70">
+                    <img src="{% static 'chatbot.webp'%}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot script -->
+    <script src="{% static 'script.js' %}" type='text/javascript'></script>
+</body>
+
+</html>

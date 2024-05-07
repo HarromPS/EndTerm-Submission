@@ -1,0 +1,67 @@
+body {
+    font-family: 'Mulish', sans-serif;
+    /* Applying Mulish font */
+}
+
+h2 {
+    font-family: 'Sofia', sans-serif;
+    /* Applying Sofia font */
+    font-size: 48px;
+    line-height: 58px;
+    font-weight: 700;
+    letter-spacing: -.5px;
+}
+
+p {
+    font-family: 'Mulish', sans-serif;
+    /* Applying Mulish font */
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+
+.wrapper {
+    margin-top: 50px;
+    /* Adjust as needed */
+    margin-bottom: 50px;
+    /* Adjust as needed */
+    padding: 20px;
+    /* Adjust as needed */
+    background-color: #f8f9fa;
+    /* Add a background color if desired */
+}
+
+
+.marquee {
+    display: flex;
+    overflow: hidden;
+    background: #eee;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: bolder
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 1rem));
+    }
+}
+
+.scroll {
+    animation: scroll 10s linear infinite;
+}
+

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% comment %}
+This is a Home page where user comes for first time
+
+Cases
+1. User is first time visitor
+2. User has account but not logged in
+
+Means user has 2 options
+1. if user has no account, create one with signup endpoint
+1. if user has already account, then login with login endpoint
+
+{% endcomment %}
+
+
+{% comment %}
+
+{% block signUpUser %}
+True <!-- Or you can put any content here, else will be eveluated as false -->
+{% endblock signUpUser %}
+
+{% endcomment %}
+
+{% block signUpUser %}
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/home/signup/">Sign Up</a></li>
+{% endblock signUpUser %}
+
+{% block loginUser %}
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/home/login/">Login</a></li>
+{% endblock loginUser %}
+
+{% block logoutUser %}
+{% comment %} <li class="nav-item"><a class="nav-link active" aria-current="page" href="/home/logout/"> Logout</a></li>
+{% endcomment %}
+{% endblock logoutUser %}
+
+
+{% block title %}Home Page - User{% endblock title %}
+
+{% block body %}
+<div class="wrapper my-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 style="font-size: 48px; line-height: 58px; font-weight: 700; letter-spacing: -0.5px;">Video calls with
+          anyone, anywhere</h2>
+        <p style="font-size: 18px; line-height: 28px; font-weight: 400;">Stay connected and collaborate with friends,
+          family, and colleagues no matter where you are.</p>
+          <div class="mt-4">
+           <a href="/home/signup/"><button style="font-size: 16px;line-height: 24px;font-weight: 500;letter-spacing: 0.2px;background: #1a73e8;color: white;border: 0;padding: 12px;margin: 10px;border-radius: 3px;">Join To Start</button></a>
+           <a href="/home/login/">
+             <button style="font-size: 16px;line-height: 24px;font-weight: 500;letter-spacing: 0.2px;background: transparent;color: black;border: 1px solid black;padding: 12px;margin: 10px;border-radius: 3px;">Login Here</button>
+            </a>
+            </div>
+      </div>
+      <div class="col-md-6">
+        <img src="../static/media/imgs/home.jpg" alt="video call" width="720" height="500" loading="eager">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- marquee -->
+
+<div class="marquee">
+  <div class="marquee-content scroll">
+    <div>SGGS</div>
+    <div>INFORMATION</div>
+    <div>TECHNOLOGY</div>
+    <div>VCALL</div>
+  </div>
+  <div class="marquee-content scroll">
+    <div>APP</div>
+    <div>GETiT</div>
+    <div>NOW</div>
+    <div>QUICKLY</div>
+  </div>
+</div>
+
+{% endblock body %}

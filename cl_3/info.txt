@@ -1,0 +1,27 @@
+Video calling application made using Django and ZegoCLoud
+
+Django ->  Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design
+
+ZegaCloud -> software product that delivers seamless and real-time audio and video communication capabilities
+
+Steps to build the application
+
+1. create a python virtual environment 
+    => python -m venv env_name
+
+    activate the environment
+    => source env_name/bin/activate
+
+    to deactivate(just outside that folder)
+    =>deactivate
+
+2. install django framework
+    => pip install django 
+
+    create a django project 
+    => django-admin startproject video_calling_app
+
+    create video calling app 
+    => django-admin startapp video_conference
+
+3. Configure app urls and models with main app in settings

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dashboard-{{request.user.first_name}}{% endblock title %}
+
+{% comment %}
+In Dashboard user is Logged in
+
+So sign up and login is disabled and logout is enabled
+{% endcomment %}
+
+{% block signUpUser %}
+{% comment %}
+This is empty, when user is not logged in it is not visible
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/home/signup/">Sign Up</a></li>
+{% endcomment %}
+{% endblock signUpUser %}
+
+
+{% block loginUser %}
+{% comment %}
+This is empty, when user is not logged in it is not visible
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/home/login/">Login</a></li>
+{% endcomment %}
+{% endblock loginUser %}
+
+{% block logoutUser %}
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/home/logout/"> Logout</a></li>
+{% endblock logoutUser %}
+
+{% block body %}
+<div class="wrapper my-3">
+    <div class="container">
+        <div class="row">
+            <h1>Welcome <strong>{{request.user.username}}</strong></h1>
+            <div class="col-md-6">
+                <h2 style="font-size: 48px; line-height: 58px; font-weight: 700; letter-spacing: -0.5px;">Super Nice Video Calls With VCall App</h2>
+                <p style="font-size: 18px; line-height: 28px; font-weight: 400;">Connect with friends and family</p>
+                <div class="mt-4">
+                    <a href="/home/meeting/"><button
+                            style="font-size: 16px;line-height: 24px;font-weight: 500;letter-spacing: 0.2px;background: #1a73e8;color: white;border: 0;padding: 12px;margin: 10px;border-radius: 3px;">New Meeting</button></a>
+                    <a href="/home/join_meet/">
+                        <button
+                            style="font-size: 16px;line-height: 24px;font-weight: 500;letter-spacing: 0.2px;background: transparent;color: black;border: 1px solid black;padding: 12px;margin: 10px;border-radius: 3px;">Join A Meet</button>
+                    </a>
+                </div>
+            </div>
+            <!-- <img src="https://source.unsplash.com/random/1600x600/?chat" class="d-block w-50" alt="coder"> -->
+            <div class="col-md-6">
+
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="{% static 'media/imgs/img1.jpg' %}" class="d-block w-100" alt="coder">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="{% static 'media/imgs/img2.jpg' %}" class="d-block w-100" alt="coder">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'media/imgs/img3.jpg' %}" class="d-block w-100" alt="coder">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <!-- <img src="../static/media/imgs/home.jpg" alt="video call" width="720" height="500" loading="eager"> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}
