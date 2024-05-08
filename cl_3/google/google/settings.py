@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
+# environment variable file
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m8@97feefqe4+hs&eo6bu1@yh0^#gh7si6k1v08*be63s-kpuz'
+SECRET_KEY = config('SECRET_KEY', cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+# ALLOWED_HOSTS = ['.vercel.app'] # Allow *.vercel.app
+ALLOWED_HOSTS = ['127.0.0.1','localhost','.vercel.app']
 
 # Application definition
 
@@ -36,9 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',       # Add this Line
-    'mainApp',   # Add your application
-    'home',
+
+    # google login app
+    'social_django',       
+    
+    # custom apps
+    'mainApp',   
+    'home', 
+
+    # environment variable app
+    # Python Decouple app
+    'decouple'
 ]
 
 # Add this section
@@ -79,9 +91,9 @@ TEMPLATES = [
 
 # added amanually
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY='1033410963953-405k1338jork08bqdbrsahnvbc5ubfmt.apps.googleusercontent.com' #' # Add your client id here '
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET ='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' #'#Add your secret key here'
-SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/social-auth/complete/google-oauth2/'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', cast=str)
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET', cast=str)
+SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = config('SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI', cast=str)
 
 
 STATIC_URL = '/static/'
@@ -105,13 +117,15 @@ WSGI_APPLICATION = 'google.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# uncomment when in development
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+DATABASES = {} # Prevent Django from loading an adapter in vercel
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

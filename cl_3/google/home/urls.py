@@ -15,6 +15,6 @@ urlpatterns = [
     path('home/signup/',views.signUpUser,name='signUpUser'),
     path('home/login/',views.loginUser,name='loginUser'),
     path('home/logout/',views.logoutUser,name='logoutUser'),
-    path('home/meeting/',views.videoCall,name='meeting'),
+    path('meeting/',views.videoCall,name='meeting'),
     path('home/join_meet/',views.joinRoom,name='join_meet'),
 ]

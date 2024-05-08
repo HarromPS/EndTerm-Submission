@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development SQLite database file
+db.sqlite3
+
+# Logs
+*.log
+
+# Static files
+/staticfiles/
+/static/
+
+# Media files
+/media/
+
+# Environment variables
+.env
+
+# Temporary files
+*.swp
+*.swo
+
+# Ignore generated files by IDEs
+.idea/
+.vscode/

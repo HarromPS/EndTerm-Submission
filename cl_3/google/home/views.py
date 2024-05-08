@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from urllib.parse import quote
 
 # create user
 from django.contrib.auth.models import User
@@ -85,8 +86,8 @@ def videoCall(request):
 
 @login_required
 def joinRoom(request):
-    if request.method == 'POST':
+    if request.method == 'POST':    
         roomID = request.POST['roomID']
-        return redirect(roomID)
+        return redirect("/meeting?roomID=" + roomID[-4:])
     return render(request, 'joinroom.html')
     # return render(request,'joinroom.html',{'name':request.user.username})
