@@ -5,7 +5,7 @@ charset-normalizer==3.3.2
 cryptography==42.0.7
 decouple==0.0.7
 defusedxml==0.8.0rc2
-Django==5.0.6
+Django==4.2.13
 idna==3.7
 oauthlib==3.2.2
 pathlib==1.0.1

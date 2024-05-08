@@ -8,6 +8,7 @@ source venv/bin/activate
 
 # install all deps in the venv
 pip install social-auth-app-django==5.4.1
+pip install python-decouple
 pip install -r requirements.txt
 
 # collect static files using the Python interpreter from venv
